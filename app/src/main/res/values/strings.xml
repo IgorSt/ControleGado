@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ControleGado</string>
+
+    <string name="main_top_bar">Controle Gado</string>
+    
+    <string name="health_management">Manejo Sanitário</string>
+    <string name="cattle">Rebanho</string>
+</resources>
