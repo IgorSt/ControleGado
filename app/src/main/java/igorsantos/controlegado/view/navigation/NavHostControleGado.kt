@@ -2,27 +2,27 @@ package igorsantos.controlegado.view.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
-import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
+import igorsantos.controlegado.view.HomeScreen
 import igorsantos.controlegado.view.MainActivity
+import igorsantos.controlegado.view.ui.managementcows.ManagementActivity
 
 @Composable
-fun NavHostControleGado(
-    navController: NavHostController,
-    startDestination: String
-) {
+fun NavHostControleGado() {
+    val navController = rememberNavController()
     NavHost(
-        navController = navController,
-        startDestination = startDestination
+        navController,
+        startDestination = Screen.MainScreen.route
     ) {
-        composable(route = Destinations.MainScreen.route) {
-            MainActivity(navController)
+        composable(route = Screen.MainScreen.route) {
+            HomeScreen(navController = navController)
         }
-        composable(route = Destinations.HealthScreen.route) {
+        composable(route = Screen.HealthScreen.route) {
 
         }
-        composable(route = Destinations.ManagementScreen.route) {
-
+        composable(route = Screen.ManagementScreen.route) {
+            ManagementActivity()
         }
     }
 }
