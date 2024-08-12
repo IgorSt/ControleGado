@@ -41,6 +41,21 @@ class MainActivity() : ComponentActivity() {
     }
 }
 
+@Composable
+fun HomeScreen(navController: NavController) {
+    ControleGadoTheme {
+        Surface(
+            modifier = Modifier.fillMaxSize(),
+            color = MaterialTheme.colorScheme.background
+        ) {
+            Column {
+                CenterAlignToolbar()
+                ContainerButtons(navController)
+            }
+        }
+    }
+}
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CenterAlignToolbar() {
@@ -71,34 +86,18 @@ fun ContainerButtons(navController: NavController) {
         verticalArrangement = Arrangement.Center
     ) {
         Button(
-            onClick = { /*TODO*/ },
+            onClick = { /*navController.navigate(Screen.HealthManagementScreen.route)*/ },
             modifier = Modifier.padding(12.dp)
         ) {
             Text(text = stringResource(id = R.string.health_management))
         }
         Button(
-            onClick = { navController.navigate(Screen.ManagementScreen.route) },
+            onClick = { navController.navigate(Screen.CowsScreen.route) },
             modifier = Modifier.padding(12.dp)
         ) {
             Text(text = stringResource(id = R.string.cattle))
         }
     }
-}
-
-@Composable
-fun HomeScreen(navController: NavController) {
-    ControleGadoTheme {
-        Surface(
-            modifier = Modifier.fillMaxSize(),
-            color = MaterialTheme.colorScheme.background
-        ) {
-            Column {
-                CenterAlignToolbar()
-                ContainerButtons(navController)
-            }
-        }
-    }
-
 }
 
 @Preview(showBackground = true)

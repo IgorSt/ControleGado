@@ -5,8 +5,8 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import igorsantos.controlegado.view.HomeScreen
-import igorsantos.controlegado.view.MainActivity
-import igorsantos.controlegado.view.ui.managementcows.ManagementActivity
+import igorsantos.controlegado.view.ui.cows.CowsScreen
+import igorsantos.controlegado.view.ui.healthmanagement.HealthManagementScreen
 
 @Composable
 fun NavHostControleGado() {
@@ -18,11 +18,11 @@ fun NavHostControleGado() {
         composable(route = Screen.MainScreen.route) {
             HomeScreen(navController = navController)
         }
-        composable(route = Screen.HealthScreen.route) {
-
+        composable(route = Screen.HealthManagementScreen.route) {
+            HealthManagementScreen()
         }
-        composable(route = Screen.ManagementScreen.route) {
-            ManagementActivity()
+        composable(route = Screen.CowsScreen.route) {
+            CowsScreen()
         }
     }
 }
